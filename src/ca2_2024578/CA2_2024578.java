@@ -6,7 +6,7 @@ package ca2_2024578;
 
 /**
  *
- * @author buyan
+ * @author buyantugs
  */
 public class CA2_2024578 {
 
