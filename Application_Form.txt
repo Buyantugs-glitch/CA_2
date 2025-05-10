@@ -1,0 +1,37 @@
+Name,Department,Position,Rank,Station
+James,Criminal Investigations,senior,Detective,Precinct 54
+Sarah,Traffic Enforcement,middle,Traffic Officer,Precinct 12
+Michael,Public Order,junior,Patrol Officer,Precinct 33
+Emily,Anti-Narcotics,senior,Sergeant,Precinct 18
+David,Criminal Investigations,middle,Detective,Precinct 54
+Jessica,Investigation Division,junior,Forensic Analyst,Headquarters
+Robert,Traffic Enforcement,senior,Lieutenant,Precinct 12
+Amanda,Public Order,middle,Patrol Sergeant,Precinct 33
+Daniel,Anti-Narcotics,senior,Captain,Precinct 18
+Jennifer,Criminal Investigations,middle,Detective,Precinct 54
+Christopher,Investigation Division,senior,Forensic Supervisor,Headquarters
+Nicole,Traffic Enforcement,middle,Traffic Sergeant,Precinct 12
+Matthew,Public Order,junior,Patrol Officer,Precinct 33
+Elizabeth,Anti-Narcotics,senior,Commander,Precinct 18
+Andrew,Criminal Investigations,middle,Detective,Precinct 54
+Megan,Investigation Division,senior,Crime Scene Investigator,Headquarters
+Joshua,Traffic Enforcement,middle,Lieutenant,Precinct 12
+Stephanie,Public Order,junior,Patrol Officer,Precinct 33
+Kevin,Anti-Narcotics,senior,Deputy Inspector,Precinct 18
+Lauren,Criminal Investigations,senior,Detective,Precinct 54
+Ryan,Investigation Division,senior,Forensic Director,Headquarters
+Rachel,Traffic Enforcement,middle,Captain,Precinct 12
+Brandon,Public Order,junior,Patrol Officer,Precinct 33
+Kayla,Anti-Narcotics,senior,Inspector,Precinct 18
+Justin,Criminal Investigations,middle,Detective,Precinct 54
+Victoria,Investigation Division,senior,Chief of Detectives,Headquarters
+Austin,Traffic Enforcement,senior,Deputy Chief,Precinct 12
+Samantha,Public Order,middle,Sergeant,Precinct 33
+Jacob,Anti-Narcotics,senior,Assistant Chief,Precinct 18
+Olivia,Criminal Investigations,senior,Detective,Precinct 54
+Tyler,Investigation Division,senior,Deputy Commissioner,Headquarters
+Hannah,Traffic Enforcement,senior,Chief of Department,Precinct 12
+Nathan,Public Order,middle,Lieutenant,Precinct 33
+Brianna,Anti-Narcotics,senior,Chief of Patrol,Precinct 18
+Cameron,Criminal Investigations,senior,Detective,Precinct 54
+Taylor,Investigation Division,senior,Police Commissioner,Headquarters
