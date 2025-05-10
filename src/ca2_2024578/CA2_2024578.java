@@ -4,11 +4,6 @@
  */
 package ca2_2024578;
 
-import static ca2_2024578.MenuOption.ADD;
-import static ca2_2024578.MenuOption.EXIT;
-import static ca2_2024578.MenuOption.GENERATE;
-import static ca2_2024578.MenuOption.SEARCH;
-import static ca2_2024578.MenuOption.SORT;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.*;
 /**
  *
  * @author buyantugs
@@ -40,53 +36,64 @@ public class CA2_2024578 {
         Scanner sc = new Scanner(System.in); 
 
         // Show the menu until the user chooses to exit
-        MenuOption option;
+       MenuOption option = null;
         do {
             showMenu();
-            option = MenuOption.fromInt(sc.nextInt());
-            sc.nextLine(); // consume newline
-            switch (option) {
-                case SORT:
-                    System.out.println("\nFirst 20 employees in alphabetical sort: ");
-                    Sorting.recursiveInsertionSort(employees, employees.size());
-                    employees.stream().limit(20).forEach(System.out::println);
-                    break;
-                case SEARCH:
-                    Sorting.recursiveInsertionSort(employees, employees.size());
+            // Error handling: try-catch for invalid input
+            try {
+                int choice = sc.nextInt();
+                sc.nextLine(); // consume newline
 
-                    System.out.print("Enter name to search: ");
-                    String name = sc.nextLine();
+                // Check if input is within allowed range
+                if (choice < 1 || choice > MenuOption.values().length) {
+                    System.out.println("Please enter a valid option number from the menu.");
+                    continue; // skip loop to ask again
+                }
 
-                    System.out.println("Do you want exact match or partial match? (e/p): ");
-                    String type = sc.nextLine().trim().toLowerCase();
+                option = MenuOption.fromInt(choice);
 
-                    if (type.equals("e")) {
-                        // Exact match using Binary Search
-                        Employee found = Searching.binarySearch(employees, name);
-                        System.out.println(found != null ? found : "Not found.");
-                    } else {
-                        // Partial match using linear scan
-                        List<Employee> results = Searching.partialSearch(employees, name);
-                        if (results.isEmpty()) {
-                            System.out.println("No matching names found.");
+                switch (option) {
+                    case SORT:
+                        Sorting.recursiveInsertionSort(employees, employees.size());
+                        employees.stream().limit(20).forEach(System.out::println);
+                        break;
+                    case SEARCH:
+                        // Search logic as before
+                        System.out.print("Enter name to search: ");
+                        String name = sc.nextLine();
+
+                        System.out.print("Do you want exact match or partial match? (e/p): ");
+                        String type = sc.nextLine().trim().toLowerCase();
+
+                        if (type.equals("e")) {
+                            Employee found = Searching.binarySearch(employees, name);
+                            System.out.println(found != null ? found : "Not found.");
                         } else {
-                            System.out.println("Matching results:");
-                            results.forEach(System.out::println);
+                            List<Employee> results = Searching.partialSearch(employees, name);
+                            if (results.isEmpty()) {
+                                System.out.println("No matching names found.");
+                            } else {
+                                System.out.println("Matching results:");
+                                results.forEach(System.out::println);
+                            }
                         }
-                    }
-                    break;
-                case ADD:
-                    addEmployee(sc);
-                    break;
-                case GENERATE:
-                    System.out.print("How many random employees to generate? ");
-                    int count = sc.nextInt();
-                    sc.nextLine(); // consume newline
-                    generateRandomEmployeesFromFile("C:\\Users\\buyan\\Documents\\NetBeansProjects\\CA2_2024578\\src\\ca2_2024578\\Application_Form.txt", count);
-                    break;
-                case EXIT:
-                    System.out.println("Exiting...");
-                    break;
+                        break;
+                    case ADD:
+                        addEmployee(sc);
+                        break;
+                    case GENERATE:
+                        System.out.print("How many random employees to generate? ");
+                        int count = sc.nextInt();
+                        sc.nextLine();
+                        generateRandomEmployeesFromFile("C:\\Users\\buyan\\Documents\\NetBeansProjects\\CA2_2024578\\src\\ca2_2024578\\Application_Form.txt", count);
+                        break;
+                    case EXIT:
+                        System.out.println("Exiting...");
+                        break;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number corresponding to the menu options.");
+                sc.nextLine(); // clear invalid input
             }
         } while (option != MenuOption.EXIT);
     }

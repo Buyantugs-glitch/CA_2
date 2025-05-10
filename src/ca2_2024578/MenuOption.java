@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ca2_2024578;
-
 /**
  *
  * @author buyantugs
@@ -21,3 +20,4 @@ public enum MenuOption {
         };
     }
 }
+
